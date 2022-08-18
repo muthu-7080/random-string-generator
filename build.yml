@@ -1,23 +1,23 @@
 name: random-string-generator
 
 on:
-  push:
-    branches:
-     -master
+  push:
+    branches:
+      - master
 jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: checkout to repository
-        uses: actions/checkout@v2
-      - name: install and build
-        run: npm ci
-      - name: publish to registry
-        uses: action/setup-node@v2
-        with:
-          node-version: 16
-          registry-url: 'https://npm.pkg.github.com'
-          scope: '@muthu-7080'
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+  build and deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout to repository
+        uses: actions/checkout@v2
+      - name: install and build
+        run: npm ci
+      - name: publish in registry
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+          registry-url: 'https://npm.pkg.github.com'   
+          scope: '@muthu-7080'
+      - run: npm publish  
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}

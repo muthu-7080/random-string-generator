@@ -3,7 +3,7 @@ name: random-string-generator
 on:
   push:
     branches:
-     -master
+     -  master
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest

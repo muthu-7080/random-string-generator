@@ -1,6 +1,6 @@
 {
   "name": "@muthu-7080/random-string-generator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/index.js",
   "scripts": {
     "build": "rimraf dist && tsc"
